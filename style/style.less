@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+}
+
+body {
+	width: 750px;
+	margin: auto;
+
+	ul {
+		border-left: 1px solid black;
+		padding-left: 1em;
+		counter-reset: time;
+
+		li {
+			list-style-type: none;
+			padding: 1em;
+			position: relative;
+
+			&:nth-of-type(3n+1):before {
+				counter-increment: time;
+				content: counter(time) 'pm';
+				font-size: 9pt;
+				display: block;
+				position: absolute;
+				top: 1em;
+				left: -69px;
+				width: 50px;
+				text-align: right;
+				padding-right: 7px;
+				height: 9px;
+				line-height: 9px;
+				background: url('../png/arrow.png') no-repeat right;
+			}
+		}
+	}
+}
